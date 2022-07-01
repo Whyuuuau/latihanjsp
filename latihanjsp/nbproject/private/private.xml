@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/public/assets/backend/main.css</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/layouts/navbar.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/layouts/footer.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Servlet/IndexServlet.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/index.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Controller/ProductController.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/create.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Servlet/AboutServlet.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Controller/BaseController.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/layouts/scripts.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/about.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Model/ProductModel.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Query/ProductQuery.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Config/DBConnection.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/web/views/layouts/head.jsp</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Servlet/CreateServlet.java</file>
+            <file>file:/C:/Users/WahyuAu/OneDrive/Documents/NetBeansProjects/latihanjsp/src/java/Helper/StringHelper.java</file>
+        </group>
+    </open-files>
+</project-private>

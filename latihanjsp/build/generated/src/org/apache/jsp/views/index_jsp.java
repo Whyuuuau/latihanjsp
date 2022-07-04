@@ -55,69 +55,101 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "layouts/head.jsp" + "?" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("title", request.getCharacterEncoding())+ "=" + org.apache.jasper.runtime.JspRuntimeLibrary.URLEncode("Homepage", request.getCharacterEncoding()), out, false);
       out.write("\n");
+      out.write("        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>\n");
       out.write("    </head>\n");
       out.write("    <body class=\"d-flex flex-column h-100\">\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "layouts/navbar.jsp", out, false);
       out.write("\n");
-      out.write("        \n");
+      out.write("\n");
       out.write("        ");
 
             ProductController pc = new ProductController();
-            ResultSet rs = pc.get();
+
+            String search = "";
+            ResultSet rs;
+
+            if (request.getParameter("search") != null) {
+                search = request.getParameter("search");
+            } 
+
+            if (search.equals("")) {
+                rs = pc.get();
+            } else {
+                rs = pc.getByName(search);
+            }
         
       out.write("\n");
-      out.write("        \n");
+      out.write("\n");
       out.write("        <!-- Begin page content -->\n");
       out.write("        <main class=\"flex-shrink-0\">\n");
-      out.write("          <div class=\"container\">\n");
-      out.write("            <h1 class=\"mt-5\">Sticky footer with fixed navbar</h1>\n");
-      out.write("            <p class=\"lead\">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class=\"small\">padding-top: 60px;</code> on the <code class=\"small\">main &gt; .container</code>.</p>\n");
-      out.write("            <div class=\"row pt-5\">\n");
-      out.write("                <div class=\"col-12\">\n");
-      out.write("                    <table class=\"table table-striped table-hover\">\n");
-      out.write("                        <thead>\n");
-      out.write("                            <tr>\n");
-      out.write("                                <th>No.</th>\n");
-      out.write("                                <th>Nama Barang</th>\n");
-      out.write("                                <th>Jenis Barang</th>\n");
-      out.write("                                <th>Stok</th>\n");
-      out.write("                                <th>Aksi</th>\n");
-      out.write("                            </tr>\n");
-      out.write("                        </thead>\n");
-      out.write("                        <tbody>\n");
-      out.write("                            ");
- while(rs.next()) { 
+      out.write("            <div class=\"container\">\n");
+      out.write("                <h1 class=\"mt-5\">Sticky footer with fixed navbar</h1>\n");
+      out.write("                <p class=\"lead\">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class=\"small\">padding-top: 60px;</code> on the <code class=\"small\">main &gt; .container</code>.</p>\n");
+      out.write("                <div class=\"row pt-5\">\n");
+      out.write("                    <div class=\"col-6\">\n");
+      out.write("                        <form action=\"index\" method=\"GET\">\n");
+      out.write("                            <div class=\"mb-3\">\n");
+      out.write("                                <label class=\"form-label\">Search</label>\n");
+      out.write("                                <div class=\"input-group\">\n");
+      out.write("                                    <input type=\"text\" class=\"form-control\" name=\"search\" value=\"");
+      out.print( search);
+      out.write("\" />\n");
+      out.write("                                    <span class=\"input-group-append\">\n");
+      out.write("                                        <button class=\"input-group-text bg-light d-block\">\n");
+      out.write("                                            <i class='bx bxs-search'></i>\n");
+      out.write("                                        </button>\n");
+      out.write("                                    </span>\n");
+      out.write("                                </div>\n");
+      out.write("                            </div>\n");
+      out.write("                        </form>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"row pt-5\">\n");
+      out.write("                    <div class=\"col-12\">\n");
+      out.write("                        <table class=\"table table-striped table-hover\">\n");
+      out.write("                            <thead>\n");
+      out.write("                                <tr>\n");
+      out.write("                                    <th>No.</th>\n");
+      out.write("                                    <th>Nama Barang</th>\n");
+      out.write("                                    <th>Jenis Barang</th>\n");
+      out.write("                                    <th>Stok</th>\n");
+      out.write("                                    <th>Aksi</th>\n");
+      out.write("                                </tr>\n");
+      out.write("                            </thead>\n");
+      out.write("                            <tbody>\n");
+      out.write("                                ");
+ while (rs.next()) {
       out.write("\n");
-      out.write("                            <tr>\n");
-      out.write("                                <td>");
-      out.print( rs.getString("id") );
+      out.write("                                <tr>\n");
+      out.write("                                    <td>");
+      out.print( rs.getString("id"));
       out.write("</td>\n");
-      out.write("                                <td>");
-      out.print( rs.getString("name") );
+      out.write("                                    <td>");
+      out.print( rs.getString("name"));
       out.write("</td>\n");
-      out.write("                                <td>");
-      out.print( rs.getString("product_type") );
+      out.write("                                    <td>");
+      out.print( rs.getString("product_type"));
       out.write("</td>\n");
-      out.write("                                <td>");
-      out.print( rs.getString("stock") );
+      out.write("                                    <td>");
+      out.print( rs.getString("stock"));
       out.write("</td>\n");
-      out.write("                                <td>\n");
-      out.write("                                    <a href=\"#\" class=\"btn btn-sm btn-info\">Edit</a>\n");
-      out.write("                                    <a href=\"#\" class=\"btn btn-sm btn-danger\">Delete</a>\n");
-      out.write("                                </td>\n");
-      out.write("                            </tr>\n");
-      out.write("                            ");
- } 
+      out.write("                                    <td>\n");
+      out.write("                                        <a href=\"#\" class=\"btn btn-sm btn-info\">Edit</a>\n");
+      out.write("                                        <a href=\"#\" class=\"btn btn-sm btn-danger\">Delete</a>\n");
+      out.write("                                    </td>\n");
+      out.write("                                </tr>\n");
+      out.write("                                ");
+ }
       out.write("\n");
-      out.write("                        </tbody>\n");
-      out.write("                    </table>\n");
+      out.write("                            </tbody>\n");
+      out.write("                        </table>\n");
+      out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
-      out.write("          </div>\n");
       out.write("        </main>\n");
-      out.write("        \n");
-      out.write("        \n");
+      out.write("\n");
+      out.write("\n");
       out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "layouts/footer.jsp", out, false);
       out.write("\n");
